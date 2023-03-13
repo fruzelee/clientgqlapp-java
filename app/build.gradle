@@ -1,5 +1,6 @@
 plugins {
     id 'com.android.application'
+    id("com.apollographql.apollo3").version("3.7.4")
 }
 
 android {
@@ -41,4 +42,13 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    //Apollo Kotlin (formerly known as Apollo Android) is a GraphQL client that generates Kotlin and Java models from GraphQL queries.
+    implementation("com.apollographql.apollo3:apollo-runtime:3.7.4")
+}
+
+apollo {
+    service("service") {
+        packageName.set("com.crevado.fr.clientgqlapp_java")
+    }
 }

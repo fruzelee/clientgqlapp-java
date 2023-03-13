@@ -7,3 +7,6 @@ All notable changes to this project will be documented in this file.
 - feat: initial setup
 - feat: add CHANGELOG.md
 - feat: update .gitignore
+- feat: add the apollo plugin to our project level build.gradle file
+- feat: add the apollo runtime dependency on app level build.gradle file
+- feat: add apollo service dependency on app level build.gradle file
