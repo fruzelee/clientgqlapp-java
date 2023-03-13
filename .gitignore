@@ -104,3 +104,5 @@ lint/tmp/
 # Android Profiling
 *.hprof
 
+### Custom template
+.idea/vcs.xml
