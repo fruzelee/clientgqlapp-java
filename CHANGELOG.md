@@ -11,3 +11,4 @@ All notable changes to this project will be documented in this file.
 - feat: add the apollo runtime dependency on app level build.gradle file
 - feat: add apollo service dependency on app level build.gradle file
 - feat: add the downloaded schema.json file
+- feat: Add UsersQuery and auto-generate UsersQuery class with Apollo
