@@ -6,7 +6,7 @@ import okhttp3.OkHttpClient;
 
 public class AplClient {
     public static final String BASE_URL = "https://graphql-p534.onrender.com/graphql";
-    public static final String TAG = "CLIENT Androi APP";
+    public static final String TAG = "CLIENT Android APP";
     private static ApolloClient mApolloClient;
 
     public static ApolloClient getmApolloClient() {

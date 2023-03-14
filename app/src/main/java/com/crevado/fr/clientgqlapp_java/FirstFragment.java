@@ -41,6 +41,8 @@ public class FirstFragment extends Fragment {
                         .navigate(R.id.action_FirstFragment_to_SecondFragment);
             }
         });
+
+        getUsers();
     }
 
     @Override
@@ -59,6 +61,15 @@ public class FirstFragment extends Fragment {
                     @Override
                     public void onResponse(@NonNull Response<UsersQuery.Data> response) {
                         Log.d("User", response.getData().users().get(0).name);
+
+                        for (int i = 0; i < response.getData().users().size(); i++) {
+                            Log.d("ID", response.getData().users().get(i).id);
+                            Log.d("User", response.getData().users().get(i).name);
+                            Log.d("Age", response.getData().users().get(i).age.toString());
+                        }
+
+                        requireActivity().runOnUiThread(() -> binding.textviewFirst.setText(response.getData().users().get(0).name));
+
                     }
 
                     @Override
