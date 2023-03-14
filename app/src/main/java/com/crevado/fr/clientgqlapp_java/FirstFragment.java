@@ -68,7 +68,7 @@ public class FirstFragment extends Fragment {
                             Log.d("Age", response.getData().users().get(i).age.toString());
                         }
 
-                        requireActivity().runOnUiThread(() -> binding.textviewFirst.setText(response.getData().users().get(0).name));
+                        //requireActivity().runOnUiThread(() -> binding.textviewFirst.setText(response.getData().users().get(0).name));
 
                     }
 
