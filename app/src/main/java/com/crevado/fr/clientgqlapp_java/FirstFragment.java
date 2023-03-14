@@ -1,6 +1,7 @@
 package com.crevado.fr.clientgqlapp_java;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,7 +10,11 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
+import com.apollographql.apollo.ApolloCall;
+import com.apollographql.apollo.api.Response;
+import com.apollographql.apollo.exception.ApolloException;
 import com.crevado.fr.clientgqlapp_java.databinding.FragmentFirstBinding;
+import com.crevado.fr.clientgqlapp_java.util.AplClient;
 
 public class FirstFragment extends Fragment {
 
@@ -42,6 +47,25 @@ public class FirstFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
+    }
+
+    /*
+        Apollo Client stuff
+     */
+    private void getUsers() {
+        AplClient.getmApolloClient()
+                .query(UsersQuery.builder().build())
+                .enqueue(new ApolloCall.Callback<UsersQuery.Data>() {
+                    @Override
+                    public void onResponse(@NonNull Response<UsersQuery.Data> response) {
+                        Log.d("User", response.getData().users().get(0).name);
+                    }
+
+                    @Override
+                    public void onFailure(@NonNull ApolloException e) {
+
+                    }
+                });
     }
 
 }
