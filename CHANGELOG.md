@@ -14,3 +14,4 @@ All notable changes to this project will be documented in this file.
 - feat: Add UsersQuery and auto-generate UsersQuery class with Apollo
 - feat: Configure Apollo Project and Retrieve GraphQL Data
 - feat: Implement Data Fetching and Displaying on Screen
+- feat(ui): set up row cell for Android client's app
